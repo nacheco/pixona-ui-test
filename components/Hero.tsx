@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'https://lottie.host/630451e2-ea74-486d-8d80-b0f13236d950/u06SpRgUmv.json'
+      path: 'https://lottie.host/66245ce1-0d13-4c1e-b089-c8f09237871d/jVbVKFgETX.json'
     });
 
     return () => {
@@ -44,7 +44,7 @@ Pixona's AI Agent and AI Labor Platform are revolutionizing recruiting by
 saving you millions of dollars, countless hours, and delivering superior talent results.
       </motion.p>
 
-      {/* Button to Professor Page */}
+   
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -56,14 +56,15 @@ saving you millions of dollars, countless hours, and delivering superior talent 
         </Link>
       </motion.div>
 
-      {/* Hero Lottie Animation */}
+   
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.6, duration: 0.5 }}
-        className="mt-12 sm:mt-20 p-2 bg-transparent"
+        className="mt-12 sm:mt-20 p-2 bg-transparent flex justify-center items-center"
         style={{
           boxShadow: "0 0 50px 2px rgba(255, 255, 255, 0.6)",
+          transform: "translateX(-10px)" // Move the lottie div slightly to the left
         }}
       >
         <div ref={lottieContainer} className="rounded-2xl relative z-10 w-full h-auto"></div>

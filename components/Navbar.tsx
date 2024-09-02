@@ -13,53 +13,39 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="container mx-auto mt-5 px-6 py-8 flex items-center justify-between relative z-10">
-      <motion.div
-        className="text-charcoal-black"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        <Link href="/" className="flex items-center">
+    <nav className=" ">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <Image src="/images/logo.svg" alt="Logo" width={90} height={26} />
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pixona</span>
         </Link>
-      </motion.div>
-      <motion.div 
-        className="lg:hidden"
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-          }
-        }}
-      >
-        <button onClick={toggleMenu} className="text-gray-600 hover:text-gray-900 transition-colors">
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </motion.div>
-      <motion.nav 
-        className={`flex-col lg:flex-row lg:flex space-x-6 ${isOpen ? 'flex' : 'hidden'} lg:flex bg-white lg:bg-transparent p-6 lg:p-0 rounded-lg lg:rounded-none shadow-lg lg:shadow-none`}
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: 1,
-          transition: {
-            type: "spring",
-            stiffness: 100,
-            damping: 15
-          }
-        }}
-      >
-        <Link href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Home</Link>
-        <Link href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">About</Link>
-        <Link href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Use Cases</Link>
-        <Link href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Features</Link>
-        <Link href="#" className="text-sm bg-button-gradient px-4 py-2 rounded hover:bg-button-gradient/90 transition-colors mt-4 lg:mt-0">
-          Get Started
-        </Link>
-      </motion.nav>
-    </header>
+        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <Link href="#" className="text-sm bg-button-gradient px-4 py-2 rounded hover:bg-button-gradient/90 transition-colors">
+            Get Started
+          </Link>
+          <button onClick={toggleMenu} data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded={isOpen}>
+            <span className="sr-only">Open main menu</span>
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
+        <div className={`items-center justify-between ${isOpen ? 'flex' : 'hidden'} w-full md:flex md:w-auto md:order-1`} id="navbar-cta">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+            <li>
+              <Link href="#" className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500" aria-current="page">Home</Link>
+            </li>
+            <li>
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</Link>
+            </li>
+            <li>
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</Link>
+            </li>
+            <li>
+              <Link href="#" className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 
