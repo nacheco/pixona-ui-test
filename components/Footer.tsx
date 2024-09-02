@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +12,9 @@ const Footer: React.FC = () => {
       whileInView={{  opacity: 1 }}
       transition={{ delay: 1, duration: 0.5 }}
     >
-      <img src="/images/footer.svg" alt="Hope you liked it" className="my-16" />
+      <Link href="/">
+        <img src="/images/footer.svg" alt="Hope you liked it" className="my-16" />
+      </Link>
     </motion.footer>
   );
 };

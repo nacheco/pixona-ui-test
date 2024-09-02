@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
         transition={{ delay: 0.8, duration: 0.5 }}
         className="text-slate-500 text-[13px] md:text-lg mt-4 sm:mt-6 font-light text-center tracking-tight px-4 sm:px-0"
       >
-Pixona's AI Agent and AI Labor Platform are revolutionizing recruiting by
+Pixona&apos;s AI Agent and AI Labor Platform are revolutionizing recruiting by
 <br />
 saving you millions of dollars, countless hours, and delivering superior talent results.
       </motion.p>
